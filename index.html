@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="css/style.css">
+   <title>Employee</title>
+   <script src="https://kit.fontawesome.com/f9fc749d44.js"></script>
+</head>
+
+<body>
+   <div class="container">
+      <div class="top-functions">
+         <div class="search"></i><input type="text" placeholder="&#xF002; Search" name="search"></div>
+         <div class="sorts">
+            <label class="holiday-label">
+               <button class="on-holiday">Currently Use Holiday</button>
+            </label>
+            <label class="rest-days-label">
+               Check unspendable holiday's days
+               <select name="days-for-rest" id="">
+                  <option value="" class="choose">Choose...</option>
+                  <option value="most">With Most Days</option>
+                  <option value="least">With Least Days</option>
+               </select>
+            </label>
+         </div>
+      </div>
+      <div class="pagination"></div>
+      <div class="employee-table">
+      </div>
+   </div>
+   <script src="js/script.js"></script>
+</body>
+
+</html>
