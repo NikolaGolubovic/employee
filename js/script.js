@@ -103,6 +103,9 @@ search.addEventListener("input", function() {
     sortByRestDays.style.cursor = "not-allowed";
     sortByRestDays.disabled = true;
   }
+  if (!search.value) {
+    location.reload();
+  }
   function filterNames(arr, inpt) {
     const foundNames =
       inpt.length >= 1
@@ -113,11 +116,10 @@ search.addEventListener("input", function() {
           })
         : arr;
     if (foundNames.length == 0) {
-      empTables.innerHTML = "NO MATCH";
+      empTables.innerHTML = "<p>NO MATCH<p>";
     }
-    const pagNum = Math.ceil(foundNames.length / employeesPerPage);
     pagination.innerHTML = "";
-    createPagination(pagNum, foundNames);
+    pagination.innerHTML = `<p class="found-people">People found: ${foundNames.length}</p>`;
     createCards(foundNames);
   }
   dbase.then(data => filterNames(data, search.value));
